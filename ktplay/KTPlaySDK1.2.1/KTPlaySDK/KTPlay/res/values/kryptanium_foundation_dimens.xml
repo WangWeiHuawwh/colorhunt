@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+     <dimen name="kryptanium_foundation_commons_pull_view_font_size">14sp</dimen>
+	<dimen name="kryptanium_foundation_commons_dialog_listview_item_height">31dp</dimen>
+	<dimen name="kryptanium_foundation_commons_dialog_listview_height">137dp</dimen>
+     
+</resources>

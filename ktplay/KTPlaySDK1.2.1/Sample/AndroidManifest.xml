@@ -1,0 +1,433 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.ktplay.sample"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:smallScreens="true" />
+
+    <uses-sdk
+        android:minSdkVersion="4"
+        android:targetSdkVersion="16" />
+
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+
+    <permission android:name="org.agoo.android.permission.MESSAGE" />
+
+    <uses-permission android:name="org.agoo.android.permission.MESSAGE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.RESTART_PACKAGES" />
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+
+    <application
+        android:debuggable="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+
+        <!-- KTPlay SDK配置开始 -->
+        <meta-data
+            android:name="KTPLAY_CHANNELID"
+            android:value="GP" />
+        
+        <!-- <meta-data
+            android:name="KTPLAY_LOCK_LOGINTYPE"
+            android:value="qihoo360" /> -->
+
+        <!-- !!!注意，此处不要换行，最终Release包种会被去掉!!! -->
+        
+
+        <!-- 配置kt版本-
+                全球版: Global
+            国际版:International
+            国内版:China
+        -->
+        <meta-data android:name="KTPLAY_REGION" android:value="China"/>
+
+        <activity
+            android:name="com.ktplay.activity.GetPhotoActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:screenOrientation="user"
+            android:windowSoftInputMode="adjustPan|adjustUnspecified" >
+        </activity>
+        <!-- KTPlay SDK配置结束 -->
+
+
+        <!-- 新浪微博配置开始 -->
+        <activity
+            android:name="com.kryptanium.plugin.sns.sinaweibo.KTSinaWeiboActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|adjustUnspecified" >
+            <intent-filter>
+                <action android:name="com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="SINAWEIBO_APPKEY"
+            android:value="\ 172094080" />
+        <meta-data
+            android:name="SINAWEIBO_APPSECRET"
+            android:value="9a7d64aa28f6511f4065afb851b39117" />
+        <meta-data
+            android:name="SINAWEIBO_REDIRECTURL"
+            android:value="http://sns.whalecloud.com" />
+        <!-- 新浪微博配置结束 -->
+
+
+        <!-- QQ配置开始 -->
+        <activity
+            android:name="com.tencent.connect.common.AssistActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
+            android:name="com.tencent.tauth.AuthActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="tencent100424468" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.kryptanium.plugin.sns.qq.KTQQActivity" />
+
+        <meta-data
+            android:name="QQ_APPID"
+            android:value="100424468" >
+        </meta-data>
+        <!-- QQ配置结束 -->
+
+
+        <!-- 微信配置开始 -->
+        <activity
+            android:name=".wxapi.WXEntryActivity"
+            android:exported="true"
+            android:label="WXEntryActivity" />
+
+        <meta-data
+            android:name="WEIXIN_APPID"
+            android:value="wx1eb0e8a5dcd92736" >
+        </meta-data>
+        <!-- 微信配置结束 -->
+
+
+        <!-- 奇虎360配置开始 -->
+        <receiver android:name="com.qihoo.gamecenter.sdk.plugin.receiver.ScheduleReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.qihoo.gamecenter.sdk.plugin.scheduletask.action.response_message" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.qihoo.gamecenter.sdk.plugin.scheduletask.action.check_message" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name="com.qihoopp.qcoinpay.QcoinActivity"
+            android:configChanges="fontScale|orientation|keyboardHidden|locale|navigation|uiMode"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" >
+        </activity>
+        <!-- 添加360SDK必需的activity：com.qihoopay.insdk.activity.ContainerActivity -->
+        <activity
+            android:name="com.qihoopay.insdk.activity.ContainerActivity"
+            android:configChanges="fontScale|orientation|keyboardHidden|locale|navigation|uiMode"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+        </activity>
+
+        <meta-data
+            android:name="QHOPENSDK_APPID"
+            android:value="201296651" >
+        </meta-data>
+
+        <!-- 360SDK官方说明 —添加360SDK必需的meta-data：QHOPENSDK_APPKEY。此处value为app_key。请在360应用开放平台http://open.app.360.cn/?from=open_dt注册申请app_key和app_secret -->
+        <!-- 360SDK官方说明 —此处不要使用@string引用，上传APK时服务器要从这里读取值。读取失败会影响统计和结算，务必填写正确。 -->
+        <meta-data
+            android:name="QHOPENSDK_APPKEY"
+            android:value="003dce9872fcf76cb785a4640f962e2a" >
+        </meta-data>
+
+        <!-- 360SDK官方说明 —添加360SDK必需的meta-data：QHOPENSDK_PRIVATEKEY。此处value为private_key，其生成算法为md5(app_secret +”#”+ app_key)，全小写，详细算法请看开发文档附录。 -->
+        <!-- 360SDK官方说明 —此处不要使用@string引用，上传APK时服务器要从这里读取值 。读取失败会影响统计和结算，务必填写正确。 -->
+        <meta-data
+            android:name="QHOPENSDK_PRIVATEKEY"
+            android:value="741c92dce343b8710ff0eea1affbd2c5" >
+        </meta-data>
+
+        <!-- 360SDK官方说明 — 添加360SDK必需的meta-data：QHOPENSDK_CHANNEL。此处value通常为default，如需修改请联系我们，并以字母开头，不支持纯数字，不支持中文等全角字符，用于标识应用方的子渠道。 -->
+        <!-- 360SDK官方说明 - 此处不要使用@string引用，上传APK时服务器要从这里读取值。读取失败会影响统计和结算，务必填写正确。 -->
+        <meta-data
+            android:name="QHOPENSDK_CHANNEL"
+            android:value="default" >
+        </meta-data>
+        <meta-data
+            android:name="QHOPENSDK_APPSECRET"
+            android:value="c38f65c966640bdb89c1f2cf5262cc35" >
+        </meta-data>        
+        <!-- 奇虎360配置结束 -->
+
+
+        <!-- 豌豆荚配置开始 -->
+        <activity
+            android:name="com.wandoujia.login.LoginActivity"
+            android:screenOrientation="sensor" >
+        </activity>
+        <activity
+            android:name="com.wandoujia.login.RegisterActivity"
+            android:screenOrientation="sensor" >
+        </activity>
+        <activity
+            android:name="com.wandoujia.paysdkimpl.PayActivity"
+            android:screenOrientation="sensor" >
+        </activity>
+        <activity
+            android:name="com.wandoujia.paysdkimpl.HelpActivity"
+            android:screenOrientation="sensor" >
+        </activity>
+        <activity
+            android:name="com.wandoujia.paysdkimpl.ShenzhouActivity"
+            android:screenOrientation="sensor" >
+        </activity>
+        <activity
+            android:name="com.wandoujia.paysdkimpl.AlipayWapActivity"
+            android:screenOrientation="sensor" >
+        </activity>
+
+        <meta-data
+            android:name="WDJSDK_APPKEY"
+            android:value="100001303" />
+        <meta-data
+            android:name="WDJSDK_APPSECRET"
+            android:value="46ff06d046b2271aa8756ab409b8256a" />
+        <!-- 豌豆荚配置结束 -->
+
+
+        <!-- 友盟社会化组件SDK配置开始 （使用友盟社会化组件SDK时才用到） -->
+        <activity
+            android:name="com.kryptanium.plugin.sns.sinaweibo.KTPluginUmengSinaWeiboActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:windowSoftInputMode="adjustPan|adjustUnspecified|stateHidden|adjustResize" >
+        </activity>
+        <activity
+            android:name="com.kryptanium.plugin.sns.weixin.KTPluginUmengWXActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:windowSoftInputMode="adjustPan|adjustUnspecified|stateHidden|adjustResize" >
+        </activity>
+        <activity
+            android:name="com.kryptanium.plugin.sns.qq.KTPluginUmengQQActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:windowSoftInputMode="adjustPan|adjustUnspecified|stateHidden|adjustResize" >
+        </activity>
+
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="4f98cabc52701579cb000054" >
+        </meta-data>
+        <!-- 友盟社会化组件SDK配置结束 -->
+
+
+        <!-- Share SDK配置开始 （使用Share SDK时才用到） -->
+        <!--
+             <activity
+            android:name="cn.sharesdk.framework.ShareSDKUIShell"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" >
+            <intent-filter>
+                <data android:scheme="tencent222222" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+            </activity>
+        -->
+        <!-- Share SDK配置结束 -->
+
+
+        <!-- lenovoid 配置开始 -->
+        <!-- <meta-data
+            android:name="lenovo:applicationToken"
+            android:value="OBBN6VK2RJ7U" />
+        <meta-data
+            android:name="lenovo:channel"
+            android:value="lestore" />
+        <meta-data
+            android:name="lenovoid:realm"
+            android:value="lenovoid_example.lenovo.com" />
+        <meta-data
+            android:name="lenovoid:isThirdPartyLoginHide"
+            android:value="hiden" />
+        <meta-data
+            android:name="lenovoid:threadPatyAppName"
+            android:value="测试应用名称" />
+
+        <activity
+            android:name="com.lenovo.lsf.account.PsUserSettingActivity"
+            android:configChanges="orientation|keyboard|keyboardHidden"
+            android:launchMode="singleTask" >
+            <intent-filter>
+                <action android:name="android.intent.action.USERSETTING" />
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.lenovo.lsf.account.PsLoginActivity"
+            android:label="@string/com_lenovo_lsf_ui_name"
+            android:launchMode="singleTask"
+            android:theme="@style/com_lenovo_lsf_ui"
+            android:windowSoftInputMode="stateHidden" >
+            <intent-filter>
+                <action android:name="android.intent.action.LOGINREGISTER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="com.ktplay.sample.openapp.lenovoid" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.lenovo.lsf.account.ChangePasswordActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/com_lenovo_lsf_ui_name"
+            android:theme="@style/com_lenovo_lsf_ui"
+            android:windowSoftInputMode="stateHidden" >
+            <intent-filter>
+                <action android:name="android.intent.action.CHANGEPASSWORD" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.lenovo.lsf.account.ForgetPasswordActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/com_lenovo_lsf_ui_name"
+            android:theme="@style/com_lenovo_lsf_ui"
+            android:windowSoftInputMode="stateHidden" >
+            <intent-filter>
+                <action android:name="android.intent.action.FORGETPASSWORD" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.lenovo.lsf.account.ForgetResultActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/com_lenovo_lsf_ui_name"
+            android:theme="@style/com_lenovo_lsf_ui" >
+            <intent-filter>
+                <action android:name="android.intent.action.FORGETRESULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.lenovo.lsf.account.MyAccountActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/com_lenovo_lsf_ui_name"
+            android:theme="@style/com_lenovo_lsf_ui" >
+            <intent-filter>
+                <action android:name="android.intent.action.MYACCOUNT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.lenovo.lsf.account.AccountBindingActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/com_lenovo_lsf_ui_name"
+            android:theme="@style/com_lenovo_lsf_ui"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name="com.lenovo.lsf.account.ThirdLoginWebView"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/com_lenovo_lsf_ui_name"
+            android:theme="@style/com_lenovo_lsf_ui"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name="com.lenovo.lsf.account.WebViewActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/com_lenovo_lsf_ui_name"
+            android:theme="@style/com_lenovo_lsf_ui"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name="com.lenovo.lsf.account.KeyLoginActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@android:style/Theme.Translucent"
+            android:windowSoftInputMode="stateHidden" >
+        </activity> -->
+        <!-- lenovo id 配置结束 -->
+
+        <!-- facebook Start -->
+		<activity android:name="com.facebook.LoginActivity" android:label="@string/app_name"/>
+		<activity android:name="com.kryptanium.plugin.sns.facebook.KTFacebookActivity"/>
+		<meta-data android:name="com.facebook.sdk.ApplicationId" android:value="\ 1431319540479256"/>
+        <!-- facebook end -->
+
+        <!-- twitter Start -->
+		<!-- <meta-data android:name="TWITTER_APPKEY" android:value="6Lc1b3yN1lDh1vOWkZF04ITeE"/>
+		<meta-data android:name="TWITTER_APPSECRET" android:value="hZwIcOIydd6lAsYeg1cU3jeoJx6U0lYwYR3cI7r0cCtxMdv2jd"/> -->
+		
+		<meta-data android:name="TWITTER_APPKEY" android:value="6Lc1b3yN1lDh1vOWkZF04ITeE"/>
+		<meta-data android:name="TWITTER_APPSECRET" android:value="hZwIcOIydd6lAsYeg1cU3jeoJx6U0lYwYR3cI7r0cCtxMdv2jd"/>
+		
+		<meta-data android:name="TWITTER_CALLBACKURL" android:value="http://cn.ktplay.com/twitter/callback"/>
+        <!-- twitter end -->
+        
+        <activity
+            android:name="com.ktplay.sample.KTSampleActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="sensor" >
+            <intent-filter>
+
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <!--
+                 <intent-filter>
+                <action android:name="lenovoid.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            -->
+        </activity>
+        
+        <activity android:name="KTLoginSampleActivity" android:screenOrientation="sensor"></activity>
+        <activity android:name="KTFriendshipSampleActivity" android:screenOrientation="sensor"></activity>
+        <activity android:name="KTItemsActivity" android:screenOrientation="sensor"></activity>
+        <activity android:name="KTLeaderboardSampleActivity" android:screenOrientation="sensor"></activity>
+        
+    </application>
+
+</manifest>

@@ -1,0 +1,32 @@
+        <!-- 豌豆荚配置开始 -->
+        <activity
+            android:name="com.wandoujia.login.LoginActivity"
+            android:screenOrientation="sensor">
+        </activity>
+        <activity
+            android:name="com.wandoujia.login.RegisterActivity"
+            android:screenOrientation="sensor">
+        </activity>
+        <activity
+            android:name="com.wandoujia.paysdkimpl.PayActivity"
+            android:screenOrientation="sensor" >
+        </activity>
+        <activity
+            android:name="com.wandoujia.paysdkimpl.HelpActivity"
+            android:screenOrientation="sensor">
+        </activity>
+        <activity
+            android:name="com.wandoujia.paysdkimpl.ShenzhouActivity"
+            android:screenOrientation="sensor"
+            >
+        </activity>
+        <activity
+            android:name="com.wandoujia.paysdkimpl.AlipayWapActivity"
+            android:screenOrientation="sensor" >
+        </activity>
+        <meta-data android:name="WDJSDK_APPKEY" android:value="100001303"/>
+        <meta-data android:name="WDJSDK_APPSECRET" android:value="46ff06d046b2271aa8756ab409b8256a"/>
+        <meta-data
+            android:name="KTPLAY_LOCK_LOGINTYPE"
+            android:value="wandoujia" />
+        <!-- 豌豆荚配置结束-->

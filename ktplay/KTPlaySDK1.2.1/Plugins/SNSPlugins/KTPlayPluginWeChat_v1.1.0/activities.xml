@@ -1,0 +1,11 @@
+        <!-- 微信配置开始 -->
+        <activity
+            android:name=".wxapi.WXEntryActivity"
+            android:exported="true"
+            android:label="WXEntryActivity"
+            />
+        <meta-data
+            android:name="WEIXIN_APPID"
+            android:value="wxde65ab9ada50fad4" >
+        </meta-data>
+        <!-- 微信配置结束 -->

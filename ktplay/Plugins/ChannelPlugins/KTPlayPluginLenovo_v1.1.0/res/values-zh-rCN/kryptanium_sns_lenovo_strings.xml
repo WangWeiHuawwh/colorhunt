@@ -1,0 +1,58 @@
+<resources>
+    <string name="kryptanium_lenovo_suggestion_unknow"></string>
+    <string name="kryptanium_sns_name_lenovo">联想</string>
+    
+            <string name="kryptanium_lenovo_error_network_unavailable">网络不可用</string>
+    <string name="kryptanium_lenovo_error_network_not_inline">检测不到网络</string>
+    <string name="kryptanium_lenovo_error_network_set">请检查网络设置</string>
+    <string name="kryptanium_lenovo_gender_male">男</string>
+    
+    <string name="kryptanium_lenovo_error_description_miss_metadata">"Lenovo SDK必需的meta-data未配置</string>
+    <string name="kryptanium_lenovo_error_failureReason_miss_metadata">"必需的meta-data有：\n"</string>
+    <string name="kryptanium_lenovo_suggestion_miss_metadata">"请检查AndroidManifest.xml文件，补全Lenovo SDK配置，以下是样例：\n
+        &#060;meta-data android:name=\&#034;lenovo:applicationToken\&#034; android:value=\&#034;OBBN6VK2RJ7U\&#034; &#062; &#060;&#047;meta-data&#062;"</string>
+    <string name="kryptanium_lenovo_error_description_miss_activity">AndroidManifest.xml缺少Lenovo SDK必要类声明</string>   
+    <string name="kryptanium_lenovo_error_failureReason_miss_activity">以下是未声明的类：\n</string> 
+    <string name="kryptanium_lenovo_suggestion_miss_activity">请在 AndroidManifest.xml新增类声明样式如下:\n
+       &#060;activity\n
+            android:name=\&#034;com.lenovo.lsf.account.PsUserSettingActivity\&#034;\n
+            android:configChanges=\&#034;orientation|keyboard|keyboardHidden\&#034;\n
+            android:windowSoftInputMode=\&#034;stateAlwaysHidden|adjustResize\&#034; &#062;\n
+        &#060;&#047;activity&#062;\n" 
+        </string> 
+    <string name="kryptanium_lenovo_error_necessary_description_perssion_not_set">Lenovo SDK必要权限未设置或设置不全。</string>
+    <string name="kryptanium_lenovo_error_necessary_perssion_not_set">未设置的权限有：</string>
+    <string name="kryptanium_lenovo_suggestion_set_necessary_perssion">请在AndroidManifest.xml新增必要的权限.</string>
+    
+    <string name="kryptanium_lenovo_error_description_get_userinfo_fail">获取用户信息失败。</string>
+    <string name="kryptanium_lenovo_error_failureReason_get_userinfo_fail">拉取用户信息时失败，userInfo为null</string>
+    <string name="kryptanium_lenovo_suggestion_get_userinfo_fail">请检查AndroidManifest中各项配置是否正确.</string>
+    <string name="kryptanium_lenovo_error_failureReason_get_jsoncode_fail">从Json字符中获取授权码错误</string>
+    
+    <string-array name="kryptanium_lenovo_error_code" translatable="false">
+        <item>USS-0100~无效的用户名，需要检查用户名格式是否正确</item>
+        <item>USS-0101~口令错误</item>
+        <item>USS-0103~无此用户，请检查用户名是否正确</item>
+        <item>USS-0104~用户名已存在，不允许重复注册</item>
+        <item>USS-0105~账号必须激活才能登录</item>
+        <item>USS-0108~该用户已激活请勿重复操作</item>
+        <item>USS-0110~无效的IMEI、SN或MAC</item>
+        <item>USS-0111~账号已被disable</item>
+        <item>USS-0113~口令类型错误</item>
+        <item>USS-0121~无效的realm</item>
+        <item>USS-0122~此服务不支持该realm</item>
+        <item>USS-0126~Ticket值解析失败</item>
+        <item>USS-0135~无效的请求数据</item>
+        <item>USS-0151~账号已锁定</item>
+        <item>USS-0160~需要使用验证码（在申请账号时，如果服务端检测到异常行为，会返回该错误给客户端，客户端使用图形验证码）</item>
+        <item>USS-0170~密码格式错误</item>
+        <item>USS-0181~校验码错误或失效</item>
+        <item>USS-0190~（针对短信注册，服务端不支持该运营商的号码。）</item>
+        <item>USS-0540~无效的Ipsust</item>
+        <item>USS-0542~未提供Ipsust信息</item>
+        <item>USS-0202~用户登录已失效</item>
+        <item>USS-0x0000~后台快捷登录已达10次</item>
+        <item>USS-0x0001~后台快捷登录失败</item>
+        <item>USS-0x0002~后台快捷登录检测到未安装联想通行证</item>
+    </string-array>
+</resources>

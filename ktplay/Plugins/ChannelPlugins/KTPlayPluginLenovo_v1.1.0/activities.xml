@@ -1,0 +1,112 @@
+        <!-- lenovoid 配置开始 -->
+        <meta-data
+            android:name="lenovo:applicationToken"
+            android:value="OBBN6VK2RJ7U" />
+        <meta-data
+            android:name="lenovo:channel"
+            android:value="lestore" />
+        <meta-data
+            android:name="lenovoid:realm"
+            android:value="lenovoid_example.lenovo.com" />
+        <meta-data
+            android:name="lenovoid:isThirdPartyLoginHide"
+            android:value="hiden" />
+        <meta-data
+            android:name="lenovoid:threadPatyAppName"
+            android:value="测试应用名称" />
+
+        <activity
+            android:name="com.lenovo.lsf.account.PsUserSettingActivity"
+            android:configChanges="orientation|keyboard|keyboardHidden"
+            android:launchMode="singleTask" >
+            <intent-filter>
+                <action android:name="android.intent.action.USERSETTING" />
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.lenovo.lsf.account.PsLoginActivity"
+            android:label="@string/com_lenovo_lsf_ui_name"
+            android:launchMode="singleTask"
+            android:theme="@style/com_lenovo_lsf_ui"
+            android:windowSoftInputMode="stateHidden" >
+            <intent-filter>
+                <action android:name="android.intent.action.LOGINREGISTER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="com.ktplay.sample.openapp.lenovoid" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.lenovo.lsf.account.ChangePasswordActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/com_lenovo_lsf_ui_name"
+            android:theme="@style/com_lenovo_lsf_ui"
+            android:windowSoftInputMode="stateHidden" >
+            <intent-filter>
+                <action android:name="android.intent.action.CHANGEPASSWORD" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.lenovo.lsf.account.ForgetPasswordActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/com_lenovo_lsf_ui_name"
+            android:theme="@style/com_lenovo_lsf_ui"
+            android:windowSoftInputMode="stateHidden" >
+            <intent-filter>
+                <action android:name="android.intent.action.FORGETPASSWORD" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.lenovo.lsf.account.ForgetResultActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/com_lenovo_lsf_ui_name"
+            android:theme="@style/com_lenovo_lsf_ui" >
+            <intent-filter>
+                <action android:name="android.intent.action.FORGETRESULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.lenovo.lsf.account.MyAccountActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/com_lenovo_lsf_ui_name"
+            android:theme="@style/com_lenovo_lsf_ui" >
+            <intent-filter>
+                <action android:name="android.intent.action.MYACCOUNT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.lenovo.lsf.account.AccountBindingActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/com_lenovo_lsf_ui_name"
+            android:theme="@style/com_lenovo_lsf_ui"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name="com.lenovo.lsf.account.ThirdLoginWebView"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/com_lenovo_lsf_ui_name"
+            android:theme="@style/com_lenovo_lsf_ui"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name="com.lenovo.lsf.account.WebViewActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/com_lenovo_lsf_ui_name"
+            android:theme="@style/com_lenovo_lsf_ui"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name="com.lenovo.lsf.account.KeyLoginActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@android:style/Theme.Translucent"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        
+       <meta-data android:name="KTPLAY_LOCK_LOGINTYPE" android:value="lenovo" />
+        <!-- lenovo id 配置结束 -->

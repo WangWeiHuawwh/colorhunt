@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@null"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="19dp"
+        android:layout_gravity="center_vertical"
+        android:background="@color/kryptanium_title_bg"
+        android:gravity="center_vertical"
+        android:paddingLeft="8dp"
+        android:text="@string/s_kt_active_player"
+        android:textColor="@color/kryptanium_text_dark_gray"
+        android:textSize="@dimen/kryptanium_text_size_small" />
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/kryptanium_titlebar_line_height"
+        android:background="@color/kryptanium_barline_color"
+        android:paddingLeft="@dimen/kryptanium_layout_paddingLeft"
+        android:scaleType="fitXY" />
+
+    <ListView
+        android:id="@+id/kryptanium_hot_item_player_iv"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@null"
+        android:paddingLeft="8dp"
+        android:scaleType="fitXY" />
+
+</LinearLayout>

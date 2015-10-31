@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <Button 
+        android:id="@+id/btn_showlogin_with_close"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/open_login_view_closable"
+        android:onClick="onClick"
+        />
+    
+    <Button 
+        android:id="@+id/btn_showlogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/open_login_view"
+        android:onClick="onClick"
+        />
+    
+    <Button 
+        android:id="@+id/btn_userinfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/user_info"
+        android:onClick="onClick"
+        />
+    
+    <LinearLayout 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+    <TextView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/login_status"
+        />
+    <TextView
+        android:id="@+id/label_login_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+    </LinearLayout>
+    <TextView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/login_user_info"
+        />
+    <TextView 
+        android:id="@+id/login_user_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+</LinearLayout>
+</ScrollView>

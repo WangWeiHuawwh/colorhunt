@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">捕获颜色</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+	<string name="test1">载入资源</string>
+	<string name="test2">载入中</string>
+	<string name="line">line</string>
+	<string name="sina">"\ 2769431906"</string>
+</resources>

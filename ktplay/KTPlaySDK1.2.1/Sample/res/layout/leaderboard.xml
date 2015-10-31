@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+	
+	
+	<EditText 
+	    android:id="@+id/leaderboard_id"
+	    android:layout_width="match_parent"
+    		android:layout_height="wrap_content"
+    		android:hint="@string/leaderboard_id"
+	    />
+	<EditText 
+	    android:id="@+id/leaderboard_startindex"
+	    android:layout_width="match_parent"
+    		android:layout_height="wrap_content"
+    		android:hint="@string/start_index"
+    		android:text="0"
+    		android:inputType="number"
+	    />
+	<EditText 
+	    android:id="@+id/leaderboard_count"
+	    android:layout_width="match_parent"
+    		android:layout_height="wrap_content"
+    		android:text="10"
+    		android:hint="@string/count"
+    		android:inputType="number"
+	    />
+</LinearLayout>

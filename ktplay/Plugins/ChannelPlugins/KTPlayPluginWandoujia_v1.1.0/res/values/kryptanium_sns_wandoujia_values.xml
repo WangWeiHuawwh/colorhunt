@@ -1,0 +1,12 @@
+<resources>
+    
+    <!-- Settings -->
+    <string name="kryptanium_wandoujia_prop_category">sns</string>
+    <string name="kryptanium_wandoujia_prop_region">China</string>
+    <string name="kryptanium_wandoujia_prop_name">wandoujia</string>
+    <integer name="kryptanium_wandoujia_prop_priority">1</integer>
+    <string name="kryptanium_wandoujia_prop_version">1.0</string>
+    <string name="kryptanium_wandoujia_prop_channel">true</string>
+    <string-array name="kryptanium_wandoujia_shareable_targets">
+    </string-array>
+</resources>
